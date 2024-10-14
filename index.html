@@ -122,6 +122,9 @@
             fetch("https://script.google.com/macros/s/AKfycbxGiqi5TIriOehXPAA9oBboze_o2u2jpsY2Sb6fQE1G0NttZvTulUAz4NJTn0R2TBln/exec", {
                 method: "POST",
                 body: formData,
+                headers: {
+                'Referer': window.location.href // Set the Referer header to the current page URL
+                }
             })
             .then(response => {
                 if (!response.ok) {
