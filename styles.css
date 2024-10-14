@@ -240,3 +240,45 @@ footer a:hover {
     max-width: 100px;  /* Reduce the size of the logo */
     height: auto;      /* Maintain aspect ratio */
 }
+
+/* Contact Form Styling */
+#contact form {
+    max-width: 600px; /* Limit the width of the form */
+    margin: 0 auto; /* Center the form */
+    padding: 20px;
+    background-color: #f4f8fc; /* Light background for the form */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}
+
+.form-group {
+    margin-bottom: 20px; /* Space between form groups */
+}
+
+label {
+    display: block; /* Make labels block elements */
+    margin-bottom: 5px; /* Space below labels */
+    color: #004aad; /* Label color */
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%; /* Full width */
+    padding: 10px; /* Padding inside input fields */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 1rem; /* Font size for inputs */
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border-color: #004aad; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+}
+
+button[type="submit"] {
+    margin-top: 10px; /* Space above the button */
+    cursor: pointer;
+}

@@ -69,24 +69,43 @@
     </section>
 
     <section id="contact">
-        <!-- <div class="container">
-            <h3>Contact Us</h3> -->
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf03lNqPpQqKDB8uMxUFuinFhQtUxqH4x1vkgnXRyWZg9DVow/viewform?embedded=true" width="100%" height="1000" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-            <!-- <p>While we’re preparing for our launch, we invite you to sign up for updates below:</p>
-            <a href="#interest-form" class="cta-button-secondary">Sign Up for Updates</a> -->
-            <!-- <p>If you're ready to find the best candidates for your openings or want to learn more, reach out to us!</p>
-            <a href="mailto:info@whitehans.in" class="cta-button">Contact Us</a> -->
-        <!-- </div> -->
-    </section>
-    <!-- <section id="interest-form">
         <div class="container">
-            <h3>Stay Updated on Our Launch</h3>
-            <p>Sign up to receive updates and be the first to know when we launch.</p> -->
-            
-            <!-- Embed Google Form -->
-            <!-- <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf03lNqPpQqKDB8uMxUFuinFhQtUxqH4x1vkgnXRyWZg9DVow/viewform?embedded=true" width="100%" height="1000" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe> -->
-        <!-- </div>
-    </section> -->
+            <h3>Contact Us</h3>
+            <p>Sign up to receive updates and be the first to know when we launch.</p>
+
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Name <span style="color: red;">*</span></label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address <span style="color: red;">*</span></label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="company">Company/Organization Name (optional)</label>
+                    <input type="text" id="company" name="company">
+                </div>
+                <div class="form-group">
+                    <label for="challenges">What are your main challenges in the recruitment process?</label>
+                    <textarea id="challenges" name="challenges" rows="5"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Would you like to participate in early testing or beta programs?</label>
+                    <div>
+                        <label>
+                            <input type="radio" name="beta" value="yes" required> Yes
+                        </label>
+                        <label>
+                            <input type="radio" name="beta" value="no"> No
+                        </label>
+                    </div>
+                </div>
+                <button type="submit" class="cta-button">Sign Up</button>
+            </form>
+            <div id="response-message" style="display:none;"></div>
+        </div>
+    </section>
 
     <footer>
         <div class="container">
@@ -94,5 +113,35 @@
             <p><a href="#about">Privacy Policy</a> | <a href="#contact">Terms of Service</a></p>
         </div>
     </footer>
+    <script>
+        document.getElementById("contact-form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the form from submitting normally
+
+            var formData = new FormData(this); // Collect form data
+
+            fetch("https://script.google.com/macros/s/AKfycbxGiqi5TIriOehXPAA9oBboze_o2u2jpsY2Sb6fQE1G0NttZvTulUAz4NJTn0R2TBln/exec", {
+                method: "POST",
+                body: formData,
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json(); // Parse the JSON response
+            })
+            .then(data => {
+                // Show a thank-you message
+                document.getElementById("response-message").style.display = "block";
+                document.getElementById("response-message").innerHTML = "Thank you for your submission!";
+                // Optionally reset the form
+                document.getElementById("contact-form").reset();
+            })
+            .catch((error) => {
+                console.error('There was a problem with the fetch operation:', error);
+                document.getElementById("response-message").style.display = "block";
+                document.getElementById("response-message").innerHTML = "There was an error submitting your form. Please try again.";
+            });
+        });
+    </script>
 </body>
 </html>
