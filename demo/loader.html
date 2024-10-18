@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhiteHans - Loading</title>
+    <link rel="stylesheet" href="loader.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(to bottom right, #0077b6, #90e0ef);
+            font-family: Arial, sans-serif;
+            color: #fff;
+            text-align: center;
+        }
+        .loader-container {
+            background: rgba(0, 0, 0, 0.7); /* Darker background for contrast */
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px); /* Add blur effect for depth */
+        }
+        .loader h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            font-weight: normal;
+        }
+        .spinner {
+            border: 8px solid rgba(255, 255, 255, 0.3); /* Outer color */
+            border-top: 8px solid #90e0ef; /* Inner color */
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .loading-message {
+            margin-top: 20px;
+            font-size: 18px;
+            animation: fadeIn 1s ease-in-out forwards;
+            opacity: 0; /* Start invisible */
+            animation-delay: 0.5s; /* Delay to match spinner */
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1; /* Fade in effect */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="loader-container">
+        <div class="loader">
+            <h1>Finding the Best Candidates...</h1>
+            <div class="spinner"></div>
+            <p class="loading-message">Please wait while we process your request.</p>
+        </div>
+    </div>
+
+    <script>
+        setTimeout(function() {
+            window.location.href = './filtered-candidates.html';
+        }, 4000); // Change 2000 to the desired delay in milliseconds
+    </script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+/* General Styles */
+body {
+    background-color: #f1f5f8;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.list-container {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 30px;
+}
+
+.header .logo {
+    text-align: center;
+    font-size: 32px;
+    color: #0077b6;
+    margin-bottom: 50px;
+}
+
+.candidate-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+}
+
+.candidate-card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.candidate-card:hover {
+    transform: translateY(-10px);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.candidate-name {
+    font-size: 24px;
+    color: #0077b6;
+    margin: 0;
+}
+
+.rank-badge {
+    background-color: #ffb703;
+    color: white;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+.candidate-role, .candidate-exp, .candidate-rating {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.candidate-rating {
+    color: #0077b6;
+    font-weight: bold;
+}
+
+.view-profile-btn {
+    background-color: #0077b6;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+}
+
+.view-profile-btn:hover {
+    background-color: #023e8a;
+}
+
+/* View More Recommendations Button */
+.view-more-container {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.view-more-btn {
+    background-color: #0077b6;
+    color: white;
+    font-size: 18px;
+    padding: 14px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.view-more-btn:hover {
+    background-color: #023e8a;
+}

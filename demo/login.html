@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhiteHans - Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <h1 class="logo">WhiteHans</h1>
+            <form class="login-form" onsubmit="event.preventDefault(); window.location.href='./job-requirement.html';">
+                <h2 class="form-title">Login to your account</h2>
+                <div class="input-group">
+                    <input type="email" id="email" class="input-field" placeholder="Enter your email">
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" class="input-field" placeholder="Enter your password">
+                </div>
+                <button type="submit" class="btn login-btn">Log In</button>
+                <div class="form-footer">
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                    <span class="divider">|</span>
+                    <a href="#" class="signup-link">Sign Up</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

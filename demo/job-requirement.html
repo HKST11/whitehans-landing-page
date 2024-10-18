@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhiteHans - Job Requirements</title>
+    <link rel="stylesheet" href="job-requirement.css">
+</head>
+<body>
+    <div class="job-requirements-container">
+        <header class="header">
+            <h1 class="logo">WhiteHans</h1>
+            <nav class="nav">
+                <a href="index.html">Home</a>
+                <a href="job-listings.html">Job Listings</a>
+                <a href="candidates.html">Candidates</a>
+            </nav>
+        </header>
+        
+        <form class="job-requirements-form" onsubmit="event.preventDefault(); window.location.href='./loader.html';">
+            <h2>Input Job Requirements</h2>
+            <label for="job-title">Job Title:</label>
+            <input type="text" id="job-title" required>
+
+            <label for="company-name">Company Name:</label>
+            <input type="text" id="company-name" required>
+
+            <label for="location">Location:</label>
+            <input type="text" id="location" required>
+
+            <label for="job-type">Job Type:</label>
+            <select id="job-type" required>
+                <option value="">Select Job Type</option>
+                <option value="full-time">Full-time</option>
+                <option value="part-time">Part-time</option>
+                <option value="contract">Contract</option>
+            </select>
+
+            <label for="salary-range">Salary Range (INR):</label>
+            <div class="salary-range">
+                <input type="number" id="salary-min" placeholder="Min" required>
+                <input type="number" id="salary-max" placeholder="Max" required>
+            </div>
+
+            <label for="job-description">Job Description:</label>
+            <textarea id="job-description" rows="4" required></textarea>
+
+            <label for="required-skills">Required Skills:</label>
+            <input type="text" id="required-skills" placeholder="e.g. JavaScript, React">
+
+            <button type="submit" class="submit-button">Submit</button>
+        </form>
+        
+        <footer class="footer">
+            <p>Contact: info@whitehans.com</p>
+            <p><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+        </footer>
+    </div>
+</body>
+</html>
